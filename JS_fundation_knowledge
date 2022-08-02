@@ -1,0 +1,29 @@
+1.JS的三种书写方式：
+（1） 行内式的JS ———— 直接写到元素的内部
+ (2) 嵌入式JS —————— <script></script>
+ (3) 外联式JS—————— <script src=".js"></script>
+
+2.JS的输入输出语句：
+alert(msg) ———— 浏览器弹出提示框
+prompt() ———— 用户可以在浏览器弹出的输入框中输入内容
+console.log ———— 用于给程序员看
+
+3.JS的变量命名方式
+（1）严格区分大小写
+（2）不能以数字开头
+（3）不能是关键字，保留字
+（4）变量名必须有意义
+（5）遵守驼峰命名法
+（6）不要直接使用name命名
+
+4. JS的数据类型
+（1）简单数据类型：Number,Null,Undefined,String,Boolean
+
+5. Number
+(1)数字型范围：最大值和最小值
+Number.MAX_VALUE
+Number.MIN_VALUE
+(2)三个特殊值：
+Infinity  无穷大
+-Infinity 无穷小
+NaN  不是一个数值
