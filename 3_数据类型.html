@@ -16,6 +16,27 @@
       console.log(y);
       var num3 = 0x9;
       //0x开头为16进制
+
+      // isNaN() 这个方法用来判断非数字，并且返回一个值。如果是数字返回false，如果是不是数字返回true
+      // 案例：弹出网页警示框
+      var str =
+        '酷热难耐，火辣的太阳底下，我挺拔的身姿，成为了最独特的风景，\n我审视四周，这里，是我的舞台，我就是天地间的王者\n这一刻，我豪气冲天，终于大喊一声："收破烂～"';
+      // alert(str);
+      //1. length获取字符串的长度
+      console.log(str.length);
+      //2. 字符串的拼接
+      console.log("pink" + true);
+      console.log("pink" + 18);
+      // 案例：
+      var age = prompt("请输入你的年龄：");
+      var str = "您今年" + age + "岁";
+      alert(str);
+      // undefined 类型相加
+      console.log(undefined + "1"); // undefined1
+      console.log(undefined + 1); //NaN
+      // null类型相加
+      console.log(null + "1"); //null1
+      console.log(null + 1); //1
     </script>
   </head>
   <body></body>

@@ -27,3 +27,14 @@ Number.MIN_VALUE
 Infinity  无穷大
 -Infinity 无穷小
 NaN  不是一个数值
+
+5. String
+（1）可以使用双引号也可以使用单引号
+（2）转义符的掌握
+（3）检测获取字符串的长度 length
+（4）字符串的拼接 + 不论是什么类型的数据，使用 字符串+ 拼接之后都是新字符串
+
+6. Boolean以及undefined和null
+（1）true参与加法运算当1来看，false当0来看
+  
+7. typeof 操作符
