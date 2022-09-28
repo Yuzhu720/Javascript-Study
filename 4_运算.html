@@ -30,6 +30,10 @@
       // 3.逻辑与短路运算
       console.log(123 && 456); //456
       console.log(0 && 1); //0
+
+      var num = 0;
+      console.log(123 || num++); //num++ 不再执行
+      console.log(num); //num = 0
     </script>
   </head>
   <body></body>
