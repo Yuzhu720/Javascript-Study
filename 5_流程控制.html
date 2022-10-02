@@ -5,6 +5,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script>
+      var sum = 0;
+      var average = 0;
+      for (var i = 1; i <= 100; i++) {
+        sum = sum + i;
+      }
+      average = sum / 100;
+      console.log(average);
+
+      //  2. 求 1-100之间所有偶数和奇数的和
+      var odd = 0;
+      var even = 0;
+      for (var i = 1; i <= 100; i++) {
+        // if (i % 2 == 0) {
+        //   even = even + i;
+        // } else {
+        //   odd = odd + i;
+        // }
+        i % 2 == 0 ? (even = even + i) : (odd = odd + i);
+      }
+      console.log(odd, even);
+
+      // 统计学生成绩
+      var stuNum = prompt("请输入班级人数");
+      var total = 0;
+      var perGrade;
+      var average = 0;
+      stuNum = stuNum - 0;
+      for (var i = 1; i <= stuNum; i++) {
+        perGrade = prompt("请输入第" + i + "学生的成绩");
+        perGrade = perGrade - 0;
+        total = total + perGrade;
+      }
+      average = total / stuNum;
+      console.log("total:" + total);
+      console.log("average" + average);
+
+      // 打印倒三角形
+      // 方法一：
+      // var k = 10;
+      // var str = "";
+      // // 双重for循环
+      // for (var i = 0; i < 10; i++) {
+      //   for (var j = 0; j < k; j++) {
+      //     str = str + "🌟";
+      //   }
+      //   console.log(str);
+      //   k--;
+      //   str = "";
+      // }
+
+      // 方法2:
+      var str = "";
+      for (var i = 0; i < 10; i++) {
+        for (var j = i; j < 10; j++) {
+          str = str + "🌟";
+        }
+
+        str += "\n";
+      }
+      console.log(str);
+
+      // 打印正三角形
+      var str = "";
+      for (var i = 1; i <= 10; i++) {
+        for (var j = 0; j < i; j++) {
+          str = str + "🌟";
+        }
+        str += "\n";
+      }
+      console.log(str);
+      var str = "";
+      var result = 0;
+      // 打印九九乘法表
+      for (var i = 1; i <= 9; i++) {
+        for (var j = 1; j <= i; j++) {
+          result = j * i;
+          first = j + "";
+          second = i + "";
+          result = result + "";
+          str = str + first + "*" + second + "=" + result + " ";
+        }
+        str += "\n";
+      }
+      console.log(str);
+    </script>
   </head>
   <body></body>
 </html>
