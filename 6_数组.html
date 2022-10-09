@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // // 1.使用new创建数组
+      // var arr = new Array();
+      // // 2. 使用数组字面量创建数组[]
+      // var arr = [];
+      // // 3. 数组的遍历，求数组中的最大值
+      // var arr1 = [2, 6, 1, 77, 52, 25, 7];
+      // var maxNum = 0;
+      // for (var i = 0; i < arr1.length; i++) {
+      //   maxNum < arr1[i] ? (maxNum = arr1 [i]) : (maxNum = maxNum);
+      // }
+      // console.log(maxNum);
+      // // 4.数组中新增元素，修改length长度
+      // var arr2 =['green','red','pink'];
+      // 5.把原数组中大于10的元素选出来，放入新数组
+      var arr1 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      var arr2 = [];
+      var j = 0;
+      for (var i = 0; i < arr1.length; i++) {
+        if (arr1[i] >= 10) {
+          // arr2[j] = arr1[i];
+          // j++;
+          arr2[arr2.length] = arr1[i];
+          // 自动检测长度
+        }
+      }
+      // 6. 删除指定数组元素 0
+      var arr3 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      // 7. 反转数组
+      var newArr = [];
+      for (var i = arr3.length - 1; i >= 0; i--) {
+        newArr[newArr.length] = arr3[i];
+      }
+      console.log(newArr);
+      // 冒泡排序
+      var bubbleArr = [6, 2, 1, 7, 3];
+      // 外层循环决定躺数，内层循环决定每一趟交换的次数
+      for (var i = 0; i < bubbleArr.length - 1; i++) {
+        for (var j = 0; j < bubbleArr.length - i - 1; j++) {
+          //  交换变量
+          if (bubbleArr[j] > bubbleArr[j + 1]) {
+            var temp = bubbleArr[j];
+            bubbleArr[j] = bubbleArr[j + 1];
+            bubbleArr[j + 1] = temp;
+          }
+        }
+      }
+      console.log(bubbleArr);
+    </script>
+  </head>
+  <body></body>
+</html>
