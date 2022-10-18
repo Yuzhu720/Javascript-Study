@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7-函数</title>
+    <script>
+      function addSum(x) {
+        var sum = 0;
+        for (var i = 1; i <= x; i++) {
+          sum = sum + i;
+        }
+        console.log(sum);
+      }
+      addSum(100);
+
+      var arr1 = [5, 2, 99, 101, 67, 77];
+      function biggestNum(arr) {
+        var Num = 0;
+        for (var i = 0; i < arr.length; i++) {
+          Num > arr[i] ? Num : (Num = arr[i]);
+        }
+        return Num;
+      }
+      console.log(biggestNum(arr1));
+
+      //   返回任意两个数，加减乘除的结果
+      function getResult(num1, num2) {
+        return [num1 + num2, num1 - num2, num1 * num2, num1 / num2];
+      }
+
+      // arguments的使用,只有函数才有
+      function f1() {
+        console.log(arguments);
+      }
+      f1(1, 2, 3);
+
+      // 利用函数求任意个数的最大值
+      function maxNum() {
+        var max = 0;
+        for (var i = 0; i < arguments.length; i++) {
+          max > arguments[i] ? max : (max = arguments[i]);
+        }
+        return max;
+      }
+      console.log(maxNum(2, 11, 45));
+
+      // 封装函数，翻转函数
+      function reverseArr(arr) {
+        var newArr = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+          newArr[newArr.length] = arr[i];
+        }
+        return newArr;
+      }
+      var arr1 = [1, 2, 3];
+      console.log(reverseArr(arr1));
+
+      // 封装冒泡排序的函数
+      function bubbleSort(arr) {
+        for (var i = 0; i < arr.length - 1; i++) {
+          for (var j = 0; j > arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+              var temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
