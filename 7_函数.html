@@ -69,6 +69,27 @@
           }
         }
       }
+
+      // 函数的相互调用
+      function fn() {
+        var num = 20;
+        function fun() {
+          // 内部函数可以访问外部函数
+          console.log(num);
+        }
+      }
+
+      // 作用域链
+      function f1() {
+        var num = 123;
+
+        function f2() {
+          console.log(num);
+        }
+        f2();
+      }
+      var num = 456;
+      f1();
     </script>
   </head>
   <body></body>

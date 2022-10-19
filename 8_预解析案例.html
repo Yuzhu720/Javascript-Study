@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8_预解析案例</title>
+    <script>
+      function f1() {
+        var a = (b = c = 9);
+        //相当于 var a =9; b =9;c = 9; b 和 c 直接赋值 没有var 声明，当全局变量看
+        console.log(a); //9
+        console.log(b); //9
+        console.log(c); //9
+      }
+      f1();
+      console.log(c); //9
+      console.log(b); //9
+      console.log(a); //报错
+    </script>
+  </head>
+  <body></body>
+</html>
