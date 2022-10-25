@@ -42,8 +42,26 @@
         this.name = name;
         this.age = age;
         this.sex = sex;
+        this.sing = function (song) {
+          console.log(song);
+        };
       }
       var ldh = new Star("刘德华", 18, "male");
+      ldh.sing("冰雨");
+      //  3.属性和方法前面需要添加this
+
+      // 对象的遍历，熟记!!
+      var obj2 = {
+        name: "zyz",
+        age: 18,
+        sayHi: function () {
+          console.log("fuck");
+        },
+      };
+      for (var key in obj2) {
+        console.log(key); //k为变量，会输出属性名
+        console.log(obj[key]); //输出属性值
+      }
     </script>
   </head>
   <body></body>
