@@ -38,22 +38,51 @@
       //   this.type = type;
       // }
       // 案例：猜数字游戏 随机生成1～10之间的数字，并让用户输入一个数字
-      function getRandom(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      // function getRandom(min, max) {
+      //   return Math.floor(Math.random() * (max - min + 1)) + min;
+      // }
+
+      // var randomNum = getRandom(1, 10);
+
+      // while (true) {
+      //   var guessNum = prompt("猜猜是哪个数？1~10");
+      //   guessNum = guessNum - 0;
+      //   if (guessNum > randomNum) {
+      //     alert("大了");
+      //   } else if (guessNum < randomNum) {
+      //     alert("小了");
+      //   } else {
+      //     alert("你猜对了！");
+      //     break;
+      //   }
+      // }
+      // 实现倒计时的效果
+      // 1.如何对时间差进行计算——使用时间戳进行加减
+      // 然后将时间戳转为天，时分秒
+      function countDown(aimTime) {
+        var nowTime = +new Date();
+        var inputTime = +new Date(aimTime);
+        var times = (inputTime - nowTime) / 1000; //毫秒转换为秒数
+
+        var d = parseInt(times / 60 / 60 / 24);
+        d < 10 ? "0" + d : d;
+        var h = parseInt((times / 60 / 60) % 24);
+        h < 10 ? "0" + h : h;
+        var m = parseInt((times / 60) % 60);
+        m < 10 ? "0" + m : m;
+        var s = parseInt(times % 60);
+        s < 10 ? "0" + s : s;
+
+        return d + "天" + h + "时" + m + "分" + s + "秒";
       }
 
-      var randomNum = getRandom(1, 10);
-
-      while (true) {
-        var guessNum = prompt("猜猜是哪个数？1~10");
-        guessNum = guessNum - 0;
-        if (guessNum > randomNum) {
-          alert("大了");
-        } else if (guessNum < randomNum) {
-          alert("小了");
-        } else {
-          alert("你猜对了！");
-          break;
+      console.log(countDown("2023-12-24 0:0:0"));
+      // 数组对象： 筛选数组，将工资超过2000的删除，剩余的放在新数组中
+      var arr = [1500, 1200, 2000, 2100, 1800];
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < 2000) {
+          newArr.push(arr[i]);
         }
       }
     </script>
