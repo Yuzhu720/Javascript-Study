@@ -6,36 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      // (1)计算年龄
-      //   var year = prompt("请输入你的出生年份"); //取到字符串类型
-      //   var age = 2022 - year;
-      //   alert(age);
-      var input1 = prompt("请输入第一个值");
-      input1 = input1 - "0";
-      var input2 = prompt("plz input the second number");
-      input2 = input2 - "0";
-      alert(input1 + input2);
-      //   后置自增，先表达式返回原值 后面变量
-      var e = 10;
-      var f = e++ + ++e; //22
-      console.log(f); //22
+      // // (1)计算年龄
+      // //   var year = prompt("请输入你的出生年份"); //取到字符串类型
+      // //   var age = 2022 - year;
+      // //   alert(age);
+      // var input1 = prompt("请输入第一个值");
+      // input1 = input1 - "0";
+      // var input2 = prompt("plz input the second number");
+      // input2 = input2 - "0";
+      // alert(input1 + input2);
+      // //   后置自增，先表达式返回原值 后面变量
+      // var e = 10;
+      // var f = e++ + ++e; //22
+      // console.log(f); //22
 
-      // 计算是否是闰年
-      var year = prompt("请你输入年份");
-      // 自动将字符串转为数值类型的操作 —— %
-      if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-        alert("您输入的年份是闰年");
-      } else {
-        alert("您输入的年份是平年");
+      // // 计算是否是闰年
+      // var year = prompt("请你输入年份");
+      // // 自动将字符串转为数值类型的操作 —— %
+      // if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+      //   alert("您输入的年份是闰年");
+      // } else {
+      //   alert("您输入的年份是平年");
+      // }
+      // // 数字补零，如果数字小于0，则在这个数字前面补0，否则不做操作
+      // var time = prompt("请您输入一个0～59之间的数字");
+      // time < 10 ? "0" + time : time;
+
+      // // 构建函数创建对象
+      // function Hero(name, type, blood) {
+      //   this.name = name;
+      //   this.type = type;
+      // }
+      // 案例：猜数字游戏 随机生成1～10之间的数字，并让用户输入一个数字
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
       }
-      // 数字补零，如果数字小于0，则在这个数字前面补0，否则不做操作
-      var time = prompt("请您输入一个0～59之间的数字");
-      time < 10 ? "0" + time : time;
 
-      // 构建函数创建对象
-      function Hero(name, type, blood) {
-        this.name = name;
-        this.type = type;
+      var randomNum = getRandom(1, 10);
+
+      while (true) {
+        var guessNum = prompt("猜猜是哪个数？1~10");
+        guessNum = guessNum - 0;
+        if (guessNum > randomNum) {
+          alert("大了");
+        } else if (guessNum < randomNum) {
+          alert("小了");
+        } else {
+          alert("你猜对了！");
+          break;
+        }
       }
     </script>
   </head>

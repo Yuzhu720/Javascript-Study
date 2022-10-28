@@ -5,6 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>10_内置对象</title>
+    <script>
+      // 利用对象封装自己的数学对象，里面有pi最大值和最小值
+      var myMath = {
+        PI: 3.141592653,
+        max: function () {
+          var max = arguments[0];
+          for (var i = 1; i < arguments.length; i++) {
+            if (arguments[i] > max) {
+              max = arguments[i];
+            }
+          }
+          return max;
+        },
+        min: function () {
+          var min = arguments[0];
+          for (var i = 1; i < arguments.length; i++) {
+            if (arguments[i] < min) {
+              min = arguments[i];
+            }
+          }
+          return min;
+        },
+      };
+      console.log(myMath.PI);
+      console.log(myMath.max(1, 5, 9));
+      console.log(myMath.min(1, 5, 9));
+      //   绝对值方法
+      console.log(Math.abs(-1)); //1
+      console.log(Math.abs("-1")); //隐式转换
+      // 三个取整的方法
+      //   （1）Math.floor()向下取整，往最小取值
+      console.log(Math.floor(1.9)); //1
+      // (2) Math.ceil() ceil天花板 向上取整
+      console.log(Math.ceil(1.1)); //2
+      // (3) Math.round() 四舍五入，遇到5往大了取
+      console.log(Math.round(1.5)); //2
+      //   随机数方法 random() 返回一个随机的小数 0-1之间
+      console.log(Math.random());
+      //    得到两个数之间的随机整数，并且包含这两个整数，记住！！公式
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      console.log(getRandom(1, 10));
+      //Date 对象，需要调用构造函数创建，使用new 创建
+      var time = new Date(); //如果没有参数，则返回系统当前时间
+      // 参数常用的写法 数字型 2019，10，01 或者是字符串型 ‘2019-10-1 8:8:8’
+      var date1 = new Date(2019, 10, 01);
+      console.log(date1);
+      var date2 = new Date("2019-10-1 8:8:8");
+      console.log(date2);
+      // 格式化时分秒
+      var now = new Date();
+      console.log(now.getHours());
+      console.log(now.getMinutes());
+
+      // 封装一个函数返回当前的时分秒
+      function getTimer() {
+        var time = new Date();
+        var h = time.getHours();
+        h < 10 ? "0" + h : h;
+        var m = time.getMinutes();
+        m < 10 ? "0" + m : m;
+        var s = time.getSeconds();
+        s < 10 ? "0" + s : s;
+
+        return h + ":" + m + ":" + s;
+      }
+      console.log(getTimer());
+      //获取总的毫秒数，从1970年1月1号开始计算的毫秒数
+      // 1.通过valueOf 或者getTime
+      var date = new Date();
+      console.log(date.valueOf());
+      console.log(date.getTime());
+      // 2. 简单写法
+      var date1 = +new Date();
+      console.log(date1);
+      // 3. h5新增方法：
+      console.log(Date.now());
+    </script>
   </head>
   <body></body>
 </html>
