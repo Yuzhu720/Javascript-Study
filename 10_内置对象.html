@@ -110,6 +110,44 @@
       arr3.pop();
       // 4. 删除数组开头元素
       arr3.shift();
+
+      // 数组排序： reverse() sort()
+      //1. reverse(）翻转数组
+      // 2. sort（） 冒泡排序
+      var arr4 = [13, 4, 77, 1, 7]; //直接使用sort()不会正常排序
+      arr4.sort(function (a, b) {
+        return b - a; //降序的方式进行排列
+        //return a - b; //升序的方式进行排列
+      });
+
+      // 返回数组元素的索引号 indexOf,只会返回第一个满足条件的索引号，没有的话，则会返回-1
+      console.log(arr4.indexOf(77));
+      // 倒着查询
+      console.log(arr4.lastIndexOf(77));
+
+      // 数组对象： 数组转换为字符串 toString() join('分隔符')
+      // 1. toString()将数组转为字符串
+      var strArr = [1, 2, 3];
+      console.log(strArr.toString());
+      // 2. join('分隔符')什么类型的分隔符都可以,可以自定义
+      var strArr2 = ["blue", "green", "pink"];
+      console.log(strArr2.join("-"));
+
+      // 字符串对象
+      // 基本包装类型
+      var temp = new String("andy");
+      // 把临时变量的值给str
+      str = temp;
+      temp = null;
+      // 字符串的不可变性,字符串里的值不变，虽然看上去可以改变内容，其实地址发生了改变，内存中新开辟了一个内存空间
+      var str = "coco";
+      str = "andy";
+
+      // 字符串的方法学习：
+      // 1. 根据字符返回位置,indexOf('要查找的字符',[起始的位置])
+      var str = "pink";
+      console.log(str.indexOf("i"));
+      // 2. 根据位置返回字符—— charAt(index)根据位置返回字符
     </script>
   </head>
   <body></body>
