@@ -132,6 +132,16 @@
         }
       }
       console.log(o);
+      // 2.遍历对象
+      var max = 0;
+      var ch = "";
+      for (var k in o) {
+        if (o[k] > max) {
+          max = o[k];
+          ch = k;
+        }
+      }
+      console.log(ch);
     </script>
   </head>
   <body></body>
