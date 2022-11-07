@@ -89,26 +89,49 @@
       // 数组去重重点案列
       // 把旧数组中不重复的元素选取出来放到新数组中，重复的元素只保留一个，放到新数组中去重
       // 核心算法： 遍历旧数组，然后拿旧数组元素去查询新数组，如果该元素在就不添加
-      var oldArr = ["c", "a", "z", "a", "x", "a", "x", "c", "b"];
-      var newArr = [];
-      for (var i = 0; i < oldArr.length; i++) {
-        if (newArr.indexOf(oldArr[i]) === -1) {
-          newArr.push(oldArr[i]);
-        }
-      }
-      console.log(newArr);
+      // var oldArr = ["c", "a", "z", "a", "x", "a", "x", "c", "b"];
+      // var newArr = [];
+      // for (var i = 0; i < oldArr.length; i++) {
+      //   if (newArr.indexOf(oldArr[i]) === -1) {
+      //     newArr.push(oldArr[i]);
+      //   }
+      // }
+      // console.log(newArr);
 
       // 面试题：查找一个字符串中，一个字母出现的位置以及次数
-      var str = "abcosjeosdoxeo";
-      var index = str.indexOf("o");
-      var num = 0;
-      while (index != 1) {
-        console.log(index);
-        num++;
-        index = str.indexOf("o", index + 1);
+      // var str = "abcosjeosdoxeo";
+      // var index = str.indexOf("o");
+      // var num = 0;
+      // while (index != -1) {
+      //   console.log(index);
+      //   num++;
+      //   index = str.indexOf("o", index + 1);
+      // }
+      // console.log("o出现的次数是" + num);
+      // // 课后作业，求数组里某个元素出现的次数
+      // var testArr = ["blue", "pink", "blue", "green"];
+      // var index = testArr.indexOf("blue");
+      // var num = 0;
+      // while (index != -1) {
+      //   console.log(index);
+      //   num++;
+      //   index = testArr.indexOf("blue", index + 1);
+      // }
+      // console.log(num);
+
+      // 统计出现次数最多的字符：
+      var str = "abcoefoxyozzopp";
+      // 利用对象的属性
+      var o = {};
+      for (var i = 0; i < str.length; i++) {
+        var chars = str.charAt(i);
+        if (o[chars]) {
+          o[chars]++;
+        } else {
+          o[chars] = 1;
+        }
       }
-      console.log("o出现的次数是" + num);
-      // 课后作业，求数组里某个元素出现的次数
+      console.log(o);
     </script>
   </head>
   <body></body>
