@@ -120,8 +120,53 @@
       // console.log(num);
 
       // 统计出现次数最多的字符：
-      var str = "abcoefoxyozzopp";
-      // 利用对象的属性
+      // var str = "abcoefoxyozzopp";
+      // // 利用对象的属性
+      // var o = {};
+      // for (var i = 0; i < str.length; i++) {
+      //   var chars = str.charAt(i);
+      //   if (o[chars]) {
+      //     o[chars]++;
+      //   } else {
+      //     o[chars] = 1;
+      //   }
+      // }
+      // console.log(o);
+      // // 2.遍历对象
+      // var max = 0;
+      // var ch = "";
+      // for (var k in o) {
+      //   if (o[k] > max) {
+      //     max = o[k];
+      //     ch = k;
+      //   }
+      // }
+      // console.log(ch);
+      // p186作业：
+      var str = "abaasdffggghhjjkkgfddsssss3444343";
+      // 1.字符串长度
+      console.log(str.length);
+      // 2.取指定位置的字符 0,3,5,9
+      console.log(str.charAt(0));
+      console.log(str.charAt(3));
+      console.log(str.charAt(5));
+      console.log(str.charAt(9));
+      // 3.查找指定字符是否在以上字符串中存在如i,c,b
+      if (str.indexOf("i") !== -1) {
+        console.log("i存在");
+      } else {
+        console.log("i不存在");
+      }
+      // 4.替换指定的字符
+      // 4.1将g替换为22
+      while (str.indexOf("ss") !== -1) {
+        // str = str.replace(/g/g, "22");
+        str = str.replace(/ss/g, "b");
+      }
+      console.log(str);
+      // 5.截取指定位置的字符串
+      console.log(str.substr(1, 5));
+      // 6.长出出现次数最到的字符和次数,存在相等的情况
       var o = {};
       for (var i = 0; i < str.length; i++) {
         var chars = str.charAt(i);
@@ -132,16 +177,31 @@
         }
       }
       console.log(o);
-      // 2.遍历对象
       var max = 0;
       var ch = "";
+      var maxch = [];
       for (var k in o) {
         if (o[k] > max) {
           max = o[k];
           ch = k;
         }
       }
-      console.log(ch);
+      // console.log("max = " + max);
+      maxch.push(ch);
+      console.log(maxch);
+      // 查找是否有相等的情况
+      for (var key in o) {
+        if (o[key] === max && key !== ch) {
+          maxch.push(key);
+        }
+      }
+      // console.log("出现次数最多的字符是" + ch);
+      // console.log("出现的次数是" + max);
+      // console.log(str);
+      for (var i = 0; i < maxch.length; i++) {
+        console.log("出现次数最多的字符是" + maxch[i]);
+      }
+      console.log("出现的次数是" + max);
     </script>
   </head>
   <body></body>
